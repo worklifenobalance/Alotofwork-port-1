@@ -1,91 +1,1130 @@
 <!DOCTYPE html>
 <html lang="th">
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My GitHub Website</title>
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Portfolio | Computer Science</title>
 
     <style>
+
         * {
             box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #4facfe, #00f2fe);
-            min-height: 100vh;
+            font-family: Arial, "Noto Sans Thai", sans-serif;
+            background: #f4f8ff;
+            color: #172033;
+            line-height: 1.6;
+        }
+
+        /* =========================
+           NAVBAR
+        ========================= */
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            background: rgba(255, 255, 255, 0.96);
+            backdrop-filter: blur(10px);
+
+            border-bottom: 1px solid #e1e8f5;
+        }
+
+        .nav-container {
+            width: 92%;
+            max-width: 1200px;
+
+            margin: auto;
+
+            min-height: 70px;
+
             display: flex;
-            justify-content: center;
             align-items: center;
+            justify-content: space-between;
         }
 
-        .container {
-            background: white;
-            width: 90%;
-            max-width: 600px;
-            padding: 40px;
-            border-radius: 20px;
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+            color: #1769e0;
+        }
+
+        .menu {
+            display: flex;
+            gap: 25px;
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .menu a:hover {
+            color: #1769e0;
+        }
+
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+
+            min-height: 650px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
             text-align: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+
+            padding: 80px 20px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #e8f2ff,
+                    #f9fcff
+                );
         }
 
-        h1 {
-            color: #1677ff;
+        .hero-content {
+            max-width: 900px;
+        }
+
+        .badge {
+
+            display: inline-block;
+
+            padding: 8px 18px;
+
+            margin-bottom: 20px;
+
+            border-radius: 30px;
+
+            background: #dcecff;
+
+            color: #1769e0;
+
+            font-weight: bold;
+
+            font-size: 14px;
+        }
+
+        .hero h1 {
+
+            font-size: clamp(45px, 8vw, 80px);
+
+            color: #102a56;
+
+            line-height: 1.1;
+
+            margin-bottom: 15px;
+        }
+
+        .hero h2 {
+
+            font-size: clamp(22px, 4vw, 34px);
+
+            color: #1769e0;
+
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+
+            font-size: 18px;
+
+            color: #617087;
+
+            max-width: 700px;
+
+            margin: auto;
+        }
+
+
+        /* =========================
+           BUTTON
+        ========================= */
+
+        .buttons {
+
+            margin-top: 30px;
+
+            display: flex;
+
+            justify-content: center;
+
+            gap: 15px;
+
+            flex-wrap: wrap;
+        }
+
+        .btn {
+
+            display: inline-block;
+
+            padding: 13px 25px;
+
+            border-radius: 10px;
+
+            text-decoration: none;
+
+            font-weight: bold;
+
+            transition: 0.2s;
+        }
+
+        .btn-primary {
+
+            background: #1769e0;
+
+            color: white;
+
+            box-shadow:
+                0 8px 20px rgba(23, 105, 224, 0.25);
+        }
+
+        .btn-primary:hover {
+
+            transform: translateY(-3px);
+
+            background: #0d55bd;
+        }
+
+        .btn-secondary {
+
+            background: white;
+
+            color: #1769e0;
+
+            border: 2px solid #1769e0;
+        }
+
+        .btn-secondary:hover {
+
+            transform: translateY(-3px);
+
+            background: #eef6ff;
+        }
+
+
+        /* =========================
+           SECTION
+        ========================= */
+
+        section {
+
+            width: 92%;
+
+            max-width: 1200px;
+
+            margin: auto;
+
+            padding: 80px 0;
+        }
+
+        .section-title {
+
+            text-align: center;
+
+            margin-bottom: 40px;
+        }
+
+        .section-title h2 {
+
+            font-size: 38px;
+
+            color: #102a56;
+
+            margin-bottom: 8px;
+        }
+
+        .section-title p {
+
+            color: #6c788d;
+        }
+
+
+        /* =========================
+           ABOUT
+        ========================= */
+
+        .about-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 25px;
+        }
+
+        .card {
+
+            background: white;
+
+            padding: 30px;
+
+            border-radius: 20px;
+
+            box-shadow:
+                0 10px 30px rgba(20, 60, 120, 0.08);
+        }
+
+        .card h3 {
+
+            color: #1769e0;
+
+            font-size: 24px;
+
+            margin-bottom: 15px;
+        }
+
+        .card p {
+
+            color: #5f6c81;
+        }
+
+
+        /* =========================
+           SKILLS
+        ========================= */
+
+        .skills-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 20px;
+        }
+
+        .skill {
+
+            background: white;
+
+            padding: 30px 20px;
+
+            text-align: center;
+
+            border-radius: 18px;
+
+            box-shadow:
+                0 10px 25px rgba(20, 60, 120, 0.07);
+
+            transition: 0.2s;
+        }
+
+        .skill:hover {
+
+            transform: translateY(-5px);
+        }
+
+        .skill-icon {
+
+            font-size: 42px;
+
             margin-bottom: 10px;
         }
 
-        p {
-            color: #555;
-            font-size: 18px;
+        .skill h3 {
+
+            color: #173866;
+
+            margin-bottom: 8px;
         }
 
-        button {
-            background: #1677ff;
-            color: white;
+        .skill p {
+
+            color: #707b8e;
+
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           PORTFOLIO
+        ========================= */
+
+        .portfolio-section {
+
+            width: 96%;
+
+            max-width: 1400px;
+        }
+
+        .portfolio-box {
+
+            background: white;
+
+            padding: 20px;
+
+            border-radius: 20px;
+
+            box-shadow:
+                0 15px 40px rgba(20, 60, 120, 0.12);
+        }
+
+        .portfolio-top {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 20px;
+
+            padding: 10px 10px 20px;
+        }
+
+        .portfolio-top h3 {
+
+            color: #102a56;
+
+            font-size: 24px;
+        }
+
+        .portfolio-top p {
+
+            color: #718096;
+
+            font-size: 14px;
+        }
+
+        /* PDF */
+
+        .pdf-container {
+
+            width: 100%;
+
+            height: 900px;
+
+            border-radius: 12px;
+
+            overflow: hidden;
+
+            background: #ddd;
+        }
+
+        .pdf-container iframe {
+
+            width: 100%;
+
+            height: 100%;
+
             border: none;
-            padding: 12px 25px;
-            border-radius: 10px;
-            font-size: 16px;
-            cursor: pointer;
-            margin-top: 15px;
+
+            display: block;
         }
 
-        button:hover {
-            background: #0056d6;
+
+        /* =========================
+           PROJECTS
+        ========================= */
+
+        .projects-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 25px;
         }
 
-        #result {
-            margin-top: 20px;
-            font-size: 20px;
+        .project {
+
+            background: white;
+
+            padding: 30px;
+
+            border-radius: 20px;
+
+            box-shadow:
+                0 10px 30px rgba(20, 60, 120, 0.08);
+        }
+
+        .project-number {
+
+            color: #1769e0;
+
+            font-size: 14px;
+
             font-weight: bold;
-            color: #00a86b;
+
+            margin-bottom: 10px;
         }
+
+        .project h3 {
+
+            color: #172033;
+
+            margin-bottom: 10px;
+        }
+
+        .project p {
+
+            color: #68758a;
+        }
+
+
+        /* =========================
+           CONTACT
+        ========================= */
+
+        .contact {
+
+            text-align: center;
+
+            background: white;
+
+            padding: 50px 25px;
+
+            border-radius: 25px;
+
+            box-shadow:
+                0 10px 30px rgba(20, 60, 120, 0.08);
+        }
+
+        .contact h2 {
+
+            color: #102a56;
+
+            font-size: 36px;
+
+            margin-bottom: 10px;
+        }
+
+        .contact p {
+
+            color: #68758a;
+
+            margin-bottom: 20px;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+
+            margin-top: 50px;
+
+            padding: 30px 20px;
+
+            background: #102a56;
+
+            color: white;
+
+            text-align: center;
+        }
+
+        footer p {
+
+            opacity: 0.8;
+
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 900px) {
+
+            .skills-grid {
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .projects-grid {
+
+                grid-template-columns:
+                    1fr;
+            }
+
+        }
+
+
+        @media (max-width: 700px) {
+
+            .nav-container {
+
+                flex-direction: column;
+
+                padding: 15px 0;
+
+                gap: 12px;
+            }
+
+            .menu {
+
+                gap: 12px;
+
+                flex-wrap: wrap;
+
+                justify-content: center;
+            }
+
+            .menu a {
+
+                font-size: 13px;
+            }
+
+            .hero {
+
+                min-height: 550px;
+
+                padding: 60px 15px;
+            }
+
+            .about-grid {
+
+                grid-template-columns: 1fr;
+            }
+
+            .skills-grid {
+
+                grid-template-columns: 1fr;
+            }
+
+            .portfolio-top {
+
+                flex-direction: column;
+
+                align-items: flex-start;
+            }
+
+            .pdf-container {
+
+                height: 650px;
+            }
+
+        }
+
     </style>
+
 </head>
+
 
 <body>
 
-    <div class="container">
-        <h1>🚀 สวัสดีจาก GitHub Pages</h1>
 
-        <p>
-            เว็บไซต์นี้กำลังทำงานด้วย HTML + CSS + JavaScript
-        </p>
+    <!-- =========================
+         NAVIGATION
+    ========================= -->
 
-        <button onclick="testButton()">
-            กดทดสอบ
-        </button>
+    <nav>
 
-        <div id="result"></div>
+        <div class="nav-container">
+
+            <div class="logo">
+                CS Portfolio
+            </div>
+
+            <div class="menu">
+
+                <a href="#home">
+                    หน้าหลัก
+                </a>
+
+                <a href="#about">
+                    เกี่ยวกับ
+                </a>
+
+                <a href="#skills">
+                    ทักษะ
+                </a>
+
+                <a href="#portfolio">
+                    Portfolio
+                </a>
+
+                <a href="#projects">
+                    Projects
+                </a>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+
+
+    <!-- =========================
+         HOME
+    ========================= -->
+
+    <div class="hero" id="home">
+
+        <div class="hero-content">
+
+            <div class="badge">
+                UNIVERSITY ADMISSION PORTFOLIO
+            </div>
+
+            <h1>
+                Computer Science
+            </h1>
+
+            <h2>
+                คณะวิทยาศาสตร์และเทคโนโลยี
+            </h2>
+
+            <p>
+
+                หลักสูตรวิทยาศาสตรบัณฑิต
+                <br>
+
+                สาขาวิทยาการคอมพิวเตอร์
+
+                <br><br>
+
+                เว็บไซต์รวบรวม Portfolio
+                และผลงานด้านเทคโนโลยี
+
+            </p>
+
+
+            <div class="buttons">
+
+                <a
+                    href="#portfolio"
+                    class="btn btn-primary">
+
+                    📖 ดู Portfolio
+
+                </a>
+
+
+                <a
+                    href="#about"
+                    class="btn btn-secondary">
+
+                    👤 เกี่ยวกับฉัน
+
+                </a>
+
+            </div>
+
+        </div>
+
     </div>
 
-    <script>
-        function testButton() {
-            document.getElementById("result").innerHTML =
-                "✅ JavaScript ทำงานแล้ว!";
-        }
-    </script>
+
+
+    <!-- =========================
+         ABOUT
+    ========================= -->
+
+    <section id="about">
+
+        <div class="section-title">
+
+            <h2>
+                About Me
+            </h2>
+
+            <p>
+                ข้อมูลเกี่ยวกับผู้จัดทำ
+            </p>
+
+        </div>
+
+
+        <div class="about-grid">
+
+
+            <div class="card">
+
+                <h3>
+                    👨‍💻 Profile
+                </h3>
+
+                <p>
+
+                    สวัสดีครับ ผมเป็นนักเรียนระดับ
+                    มัธยมศึกษาตอนปลาย
+                    ที่มีความสนใจด้านคอมพิวเตอร์
+                    เทคโนโลยี การเขียนโปรแกรม
+                    และการพัฒนาเว็บไซต์
+
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>
+                    🎯 My Goal
+                </h3>
+
+                <p>
+
+                    ผมมีความตั้งใจที่จะศึกษาต่อ
+                    ในสาขาวิทยาการคอมพิวเตอร์
+                    เพื่อพัฒนาความรู้ด้าน Programming,
+                    Web Development, AI
+                    และเทคโนโลยีสมัยใหม่
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         SKILLS
+    ========================= -->
+
+    <section id="skills">
+
+        <div class="section-title">
+
+            <h2>
+                Skills
+            </h2>
+
+            <p>
+                ทักษะและความสนใจ
+            </p>
+
+        </div>
+
+
+        <div class="skills-grid">
+
+
+            <div class="skill">
+
+                <div class="skill-icon">
+                    💻
+                </div>
+
+                <h3>
+                    Programming
+                </h3>
+
+                <p>
+                    การเขียนโปรแกรม
+                    และการพัฒนาโปรแกรม
+                </p>
+
+            </div>
+
+
+            <div class="skill">
+
+                <div class="skill-icon">
+                    🌐
+                </div>
+
+                <h3>
+                    Web Development
+                </h3>
+
+                <p>
+                    HTML, CSS และ JavaScript
+                </p>
+
+            </div>
+
+
+            <div class="skill">
+
+                <div class="skill-icon">
+                    🤖
+                </div>
+
+                <h3>
+                    AI
+                </h3>
+
+                <p>
+                    Artificial Intelligence
+                    และเทคโนโลยีดิจิทัล
+                </p>
+
+            </div>
+
+
+            <div class="skill">
+
+                <div class="skill-icon">
+                    🔐
+                </div>
+
+                <h3>
+                    Cybersecurity
+                </h3>
+
+                <p>
+                    ความปลอดภัยทางไซเบอร์
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         CANVA PORTFOLIO
+    ========================= -->
+
+    <section
+        id="portfolio"
+        class="portfolio-section">
+
+
+        <div class="section-title">
+
+            <h2>
+                My Portfolio
+            </h2>
+
+            <p>
+                Portfolio ที่จัดทำจาก Canva
+            </p>
+
+        </div>
+
+
+        <div class="portfolio-box">
+
+
+            <div class="portfolio-top">
+
+                <div>
+
+                    <h3>
+                        📘 University Portfolio
+                    </h3>
+
+                    <p>
+                        Faculty of Science and Technology
+                        • Computer Science
+                    </p>
+
+                </div>
+
+
+                <a
+                    href="portfolio.pdf"
+                    target="_blank"
+                    class="btn btn-primary">
+
+                    🔍 เปิด Portfolio เต็มจอ
+
+                </a>
+
+            </div>
+
+
+            <!--
+                สำคัญมาก
+
+                ไฟล์ PDF ต้องชื่อ:
+                portfolio.pdf
+
+                และต้องอยู่โฟลเดอร์เดียวกับ
+                index.html
+            -->
+
+            <div class="pdf-container">
+
+                <iframe
+                    src="portfolio.pdf"
+                    title="University Portfolio">
+
+                </iframe>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         PROJECTS
+    ========================= -->
+
+    <section id="projects">
+
+        <div class="section-title">
+
+            <h2>
+                Projects
+            </h2>
+
+            <p>
+                โครงงานและผลงานด้านเทคโนโลยี
+            </p>
+
+        </div>
+
+
+        <div class="projects-grid">
+
+
+            <div class="project">
+
+                <div class="project-number">
+                    PROJECT 01
+                </div>
+
+                <h3>
+                    📐 Area Calculator
+                </h3>
+
+                <p>
+
+                    โปรแกรมคำนวณพื้นที่รูปทรงต่าง ๆ
+                    พัฒนาด้วยภาษา Python
+                    และมีส่วนติดต่อผู้ใช้แบบ GUI
+
+                </p>
+
+            </div>
+
+
+            <div class="project">
+
+                <div class="project-number">
+                    PROJECT 02
+                </div>
+
+                <h3>
+                    🌐 Web Development
+                </h3>
+
+                <p>
+
+                    การพัฒนาเว็บไซต์ด้วย HTML,
+                    CSS และ JavaScript
+                    และนำเว็บไซต์ขึ้น GitHub Pages
+
+                </p>
+
+            </div>
+
+
+            <div class="project">
+
+                <div class="project-number">
+                    PROJECT 03
+                </div>
+
+                <h3>
+                    🤖 AI & Digital Technology
+                </h3>
+
+                <p>
+
+                    ศึกษาและประยุกต์ใช้ AI
+                    และเทคโนโลยีดิจิทัล
+                    ในการเรียนและการทำโครงงาน
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         CONTACT
+    ========================= -->
+
+    <section>
+
+        <div class="contact">
+
+            <h2>
+                Thank You
+            </h2>
+
+            <p>
+
+                ขอบคุณสำหรับการเยี่ยมชม
+                Portfolio ของผม
+
+                <br>
+
+                Computer Science
+
+            </p>
+
+
+            <a
+                href="#home"
+                class="btn btn-primary">
+
+                ⬆ กลับด้านบน
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer>
+
+        <p>
+            © 2026 Computer Science Portfolio
+        </p>
+
+        <p>
+            Hosted by GitHub Pages
+        </p>
+
+    </footer>
+
 
 </body>
+
 </html>
