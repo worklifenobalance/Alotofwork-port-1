@@ -4,96 +4,171 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Portfolio</title>
+    <title>My Portfolio</title>
 
     <style>
         * {
             box-sizing: border-box;
-        }
-
-        html, body {
             margin: 0;
             padding: 0;
-            width: 100%;
-            min-height: 100%;
-            background: #222;
-            font-family: Arial, sans-serif;
         }
 
-        .topbar {
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #e9edf2;
+            font-family: Arial, "Noto Sans Thai", sans-serif;
+            color: #222;
+        }
+
+        /* =========================
+           TOP BAR
+        ========================= */
+
+        .top-bar {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
             width: 100%;
-            height: 60px;
-            background: #111;
-            color: white;
+            background: rgba(10, 15, 25, 0.95);
+            backdrop-filter: blur(10px);
+
+            padding: 14px 20px;
 
             display: flex;
             align-items: center;
             justify-content: space-between;
 
-            padding: 0 20px;
-            position: sticky;
-            top: 0;
-            z-index: 100;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.25);
         }
 
-        .title {
+        .brand {
+            color: white;
+        }
+
+        .brand h1 {
             font-size: 20px;
-            font-weight: bold;
+            font-weight: 700;
         }
 
-        .open-btn {
+        .brand p {
+            font-size: 12px;
+            color: #cbd5e1;
+            margin-top: 3px;
+        }
+
+        .view-button {
+            text-decoration: none;
             color: white;
             background: #2563eb;
-            text-decoration: none;
-            padding: 10px 16px;
+
+            padding: 9px 16px;
             border-radius: 8px;
-            font-size: 14px;
+
+            font-size: 13px;
+            font-weight: 600;
+
+            transition: 0.2s;
         }
 
-        .open-btn:hover {
+        .view-button:hover {
             background: #1d4ed8;
+            transform: translateY(-1px);
         }
 
-        .portfolio {
+        /* =========================
+           PORTFOLIO CONTAINER
+        ========================= */
+
+        .portfolio-container {
             width: 100%;
+
             display: flex;
-            justify-content: center;
-            padding: 20px;
+            flex-direction: column;
+            align-items: center;
+
+            padding: 35px 15px 50px;
+            gap: 30px;
         }
 
-        iframe {
-            width: 100%;
-            height: calc(100vh - 100px);
-            min-height: 700px;
-            border: none;
+        /* =========================
+           EACH A4 PAGE
+        ========================= */
+
+        .portfolio-page {
+            width: min(794px, 92vw);
+
+            aspect-ratio: 210 / 297;
+
             background: white;
-            border-radius: 8px;
+
+            position: relative;
+            overflow: hidden;
+
+            box-shadow:
+                0 8px 25px rgba(0, 0, 0, 0.18);
+
+            border-radius: 2px;
         }
 
-        @media (max-width: 768px) {
+        .portfolio-page img {
+            display: block;
 
-            .topbar {
-                height: 55px;
-                padding: 0 12px;
+            width: 100%;
+            height: 100%;
+
+            object-fit: contain;
+            object-position: center;
+
+            background: white;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            text-align: center;
+
+            padding: 25px 15px 35px;
+
+            color: #64748b;
+            font-size: 13px;
+        }
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 600px) {
+
+            .top-bar {
+                padding: 12px 14px;
             }
 
-            .title {
-                font-size: 16px;
+            .brand h1 {
+                font-size: 17px;
             }
 
-            .open-btn {
+            .brand p {
+                font-size: 10px;
+            }
+
+            .view-button {
                 padding: 8px 12px;
-                font-size: 12px;
+                font-size: 11px;
             }
 
-            .portfolio {
-                padding: 8px;
+            .portfolio-container {
+                padding: 20px 8px 35px;
+                gap: 20px;
             }
 
-            iframe {
-                height: calc(100vh - 70px);
-                min-height: 600px;
-                border-radius: 4px;
+            .portfolio-page {
+                width: 96vw;
             }
         }
     </style>
@@ -101,30 +176,131 @@
 
 <body>
 
-    <div class="topbar">
+    <!-- =========================
+         TOP BAR
+    ========================= -->
 
-        <div class="title">
-            My Portfolio
+    <header class="top-bar">
+
+        <div class="brand">
+            <h1>My Portfolio</h1>
+            <p>Computer Science • University Admission Portfolio</p>
         </div>
 
-        <a
-            class="open-btn"
-            href="portfolio.pdf"
-            target="_blank">
-            เปิด Portfolio เต็มจอ
+        <a href="#portfolio" class="view-button">
+            ดู Portfolio
         </a>
 
-    </div>
+    </header>
 
 
-    <div class="portfolio">
+    <!-- =========================
+         PORTFOLIO
+    ========================= -->
 
-        <iframe
-            src="portfolio.pdf"
-            title="My Portfolio">
-        </iframe>
+    <main id="portfolio" class="portfolio-container">
 
-    </div>
+        <!-- PAGE 1 -->
+        <section class="portfolio-page">
+            <img src="portfolio/1.png"
+                 alt="Portfolio Page 1"
+                 loading="eager">
+        </section>
+
+        <!-- PAGE 2 -->
+        <section class="portfolio-page">
+            <img src="portfolio/2.png"
+                 alt="Portfolio Page 2"
+                 loading="lazy">
+        </section>
+
+        <!-- PAGE 3 -->
+        <section class="portfolio-page">
+            <img src="portfolio/3.png"
+                 alt="Portfolio Page 3"
+                 loading="lazy">
+        </section>
+
+        <!-- PAGE 4 -->
+        <section class="portfolio-page">
+            <img src="portfolio/4.png"
+                 alt="Portfolio Page 4"
+                 loading="lazy">
+        </section>
+
+        <!-- PAGE 5 -->
+        <section class="portfolio-page">
+            <img src="portfolio/5.png"
+                 alt="Portfolio Page 5"
+                 loading="lazy">
+        </section>
+
+        <!-- PAGE 6 -->
+        <section class="portfolio-page">
+            <img src="portfolio/6.png"
+                 alt="Portfolio Page 6"
+                 loading="lazy">
+        </section>
+
+        <!-- PAGE 7 -->
+        <section class="portfolio-page">
+            <img src="portfolio/7.png"
+                 alt="Portfolio Page 7"
+                 loading="lazy">
+        </section>
+
+        <!-- PAGE 8 -->
+        <section class="portfolio-page">
+            <img src="portfolio/8.png"
+                 alt="Portfolio Page 8"
+                 loading="lazy">
+        </section>
+
+        <!-- PAGE 9 -->
+        <section class="portfolio-page">
+            <img src="portfolio/9.png"
+                 alt="Portfolio Page 9"
+                 loading="lazy">
+        </section>
+
+        <!-- PAGE 10 -->
+        <section class="portfolio-page">
+            <img src="portfolio/10.png"
+                 alt="Portfolio Page 10"
+                 loading="lazy">
+        </section>
+
+        <!-- PAGE 11 -->
+        <section class="portfolio-page">
+            <img src="portfolio/11.png"
+                 alt="Portfolio Page 11"
+                 loading="lazy">
+        </section>
+
+        <!-- PAGE 12 -->
+        <section class="portfolio-page">
+            <img src="portfolio/12.png"
+                 alt="Portfolio Page 12"
+                 loading="lazy">
+        </section>
+
+        <!-- PAGE 13 -->
+        <section class="portfolio-page">
+            <img src="portfolio/13.png"
+                 alt="Portfolio Page 13"
+                 loading="lazy">
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer>
+        © 2026 My Portfolio
+    </footer>
 
 </body>
 </html>
