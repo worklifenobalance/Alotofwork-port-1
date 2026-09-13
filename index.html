@@ -28,26 +28,39 @@
 
         .portfolio-container {
             width: 100%;
+
             display: flex;
             flex-direction: column;
             align-items: center;
 
-            padding: 20px 0 40px;
             gap: 25px;
+
+            padding: 15px 0 30px;
         }
 
         /* =========================
-           EACH PAGE
+           A4 PAGE
         ========================= */
 
         .portfolio-page {
-            width: min(794px, 100vw);
+            /*
+                FHD 1920x1080
+                เผื่อพื้นที่เล็กน้อยสำหรับ browser
+                ทำให้ 1 หน้าเห็นครบในจอ
+            */
+
+            height: calc(100vh - 35px);
+
+            width: auto;
+
+            aspect-ratio: 210 / 297;
+
             background: white;
 
-            position: relative;
+            flex-shrink: 0;
 
             box-shadow:
-                0 5px 20px rgba(0, 0, 0, 0.15);
+                0 5px 20px rgba(0, 0, 0, 0.18);
         }
 
         /* =========================
@@ -58,26 +71,34 @@
             display: block;
 
             width: 100%;
-            height: auto;
-
-            max-width: 100%;
+            height: 100%;
 
             object-fit: contain;
+
+            object-position: center;
         }
 
         /* =========================
-           MOBILE
+           SMALL SCREEN
         ========================= */
 
-        @media (max-width: 600px) {
+        @media (max-width: 800px) {
 
             .portfolio-container {
-                padding: 5px 0 25px;
+                padding: 10px 0 25px;
                 gap: 15px;
             }
 
             .portfolio-page {
-                width: 100vw;
+                width: 96vw;
+                height: auto;
+
+                aspect-ratio: 210 / 297;
+            }
+
+            .portfolio-page img {
+                width: 100%;
+                height: auto;
             }
         }
     </style>
