@@ -20,101 +20,38 @@
         body {
             background: #e9edf2;
             font-family: Arial, "Noto Sans Thai", sans-serif;
-            color: #222;
         }
 
         /* =========================
-           TOP BAR
-        ========================= */
-
-        .top-bar {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-
-            width: 100%;
-            background: rgba(10, 15, 25, 0.96);
-            backdrop-filter: blur(10px);
-
-            padding: 14px 20px;
-
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-
-            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.25);
-        }
-
-        .brand {
-            color: white;
-        }
-
-        .brand h1 {
-            font-size: 20px;
-            font-weight: 700;
-        }
-
-        .brand p {
-            font-size: 12px;
-            color: #cbd5e1;
-            margin-top: 3px;
-        }
-
-        .view-button {
-            text-decoration: none;
-            color: white;
-            background: #2563eb;
-
-            padding: 9px 16px;
-            border-radius: 8px;
-
-            font-size: 13px;
-            font-weight: 600;
-
-            transition: 0.2s;
-        }
-
-        .view-button:hover {
-            background: #1d4ed8;
-            transform: translateY(-1px);
-        }
-
-        /* =========================
-           PORTFOLIO CONTAINER
+           PORTFOLIO
         ========================= */
 
         .portfolio-container {
             width: 100%;
-
             display: flex;
             flex-direction: column;
             align-items: center;
 
-            padding: 35px 15px 50px;
-            gap: 30px;
+            padding: 20px 0 40px;
+            gap: 25px;
         }
 
         /* =========================
-           EACH PORTFOLIO PAGE
+           EACH PAGE
         ========================= */
 
         .portfolio-page {
-            width: min(794px, 92vw);
-
+            width: min(794px, 100vw);
             background: white;
 
             position: relative;
 
             box-shadow:
-                0 8px 25px rgba(0, 0, 0, 0.18);
-
-            border-radius: 2px;
-
-            overflow: visible;
+                0 5px 20px rgba(0, 0, 0, 0.15);
         }
 
         /* =========================
-           PORTFOLIO IMAGE
+           IMAGE
         ========================= */
 
         .portfolio-page img {
@@ -126,22 +63,6 @@
             max-width: 100%;
 
             object-fit: contain;
-            object-position: center;
-
-            background: white;
-        }
-
-        /* =========================
-           FOOTER
-        ========================= */
-
-        footer {
-            text-align: center;
-
-            padding: 25px 15px 35px;
-
-            color: #64748b;
-            font-size: 13px;
         }
 
         /* =========================
@@ -150,30 +71,13 @@
 
         @media (max-width: 600px) {
 
-            .top-bar {
-                padding: 12px 14px;
-            }
-
-            .brand h1 {
-                font-size: 17px;
-            }
-
-            .brand p {
-                font-size: 10px;
-            }
-
-            .view-button {
-                padding: 8px 12px;
-                font-size: 11px;
-            }
-
             .portfolio-container {
-                padding: 20px 5px 35px;
-                gap: 20px;
+                padding: 5px 0 25px;
+                gap: 15px;
             }
 
             .portfolio-page {
-                width: 96vw;
+                width: 100vw;
             }
         }
     </style>
@@ -181,157 +85,61 @@
 
 <body>
 
-    <!-- =========================
-         TOP BAR
-    ========================= -->
+    <main class="portfolio-container">
 
-    <header class="top-bar">
-
-        <div class="brand">
-            <h1>My Portfolio</h1>
-            <p>Computer Science • University Admission Portfolio</p>
-        </div>
-
-        <a href="#portfolio" class="view-button">
-            ดู Portfolio
-        </a>
-
-    </header>
-
-
-    <!-- =========================
-         PORTFOLIO
-    ========================= -->
-
-    <main id="portfolio" class="portfolio-container">
-
-        <!-- PAGE 1 -->
         <section class="portfolio-page">
-            <img
-                src="portfolio/1.png"
-                alt="Portfolio Page 1"
-                loading="eager"
-            >
+            <img src="portfolio/1.png" alt="Portfolio Page 1">
         </section>
 
-        <!-- PAGE 2 -->
         <section class="portfolio-page">
-            <img
-                src="portfolio/2.png"
-                alt="Portfolio Page 2"
-                loading="lazy"
-            >
+            <img src="portfolio/2.png" alt="Portfolio Page 2">
         </section>
 
-        <!-- PAGE 3 -->
         <section class="portfolio-page">
-            <img
-                src="portfolio/3.png"
-                alt="Portfolio Page 3"
-                loading="lazy"
-            >
+            <img src="portfolio/3.png" alt="Portfolio Page 3">
         </section>
 
-        <!-- PAGE 4 -->
         <section class="portfolio-page">
-            <img
-                src="portfolio/4.png"
-                alt="Portfolio Page 4"
-                loading="lazy"
-            >
+            <img src="portfolio/4.png" alt="Portfolio Page 4">
         </section>
 
-        <!-- PAGE 5 -->
         <section class="portfolio-page">
-            <img
-                src="portfolio/5.png"
-                alt="Portfolio Page 5"
-                loading="lazy"
-            >
+            <img src="portfolio/5.png" alt="Portfolio Page 5">
         </section>
 
-        <!-- PAGE 6 -->
         <section class="portfolio-page">
-            <img
-                src="portfolio/6.png"
-                alt="Portfolio Page 6"
-                loading="lazy"
-            >
+            <img src="portfolio/6.png" alt="Portfolio Page 6">
         </section>
 
-        <!-- PAGE 7 -->
         <section class="portfolio-page">
-            <img
-                src="portfolio/7.png"
-                alt="Portfolio Page 7"
-                loading="lazy"
-            >
+            <img src="portfolio/7.png" alt="Portfolio Page 7">
         </section>
 
-        <!-- PAGE 8 -->
         <section class="portfolio-page">
-            <img
-                src="portfolio/8.png"
-                alt="Portfolio Page 8"
-                loading="lazy"
-            >
+            <img src="portfolio/8.png" alt="Portfolio Page 8">
         </section>
 
-        <!-- PAGE 9 -->
         <section class="portfolio-page">
-            <img
-                src="portfolio/9.png"
-                alt="Portfolio Page 9"
-                loading="lazy"
-            >
+            <img src="portfolio/9.png" alt="Portfolio Page 9">
         </section>
 
-        <!-- PAGE 10 -->
         <section class="portfolio-page">
-            <img
-                src="portfolio/10.png"
-                alt="Portfolio Page 10"
-                loading="lazy"
-            >
+            <img src="portfolio/10.png" alt="Portfolio Page 10">
         </section>
 
-        <!-- PAGE 11 -->
         <section class="portfolio-page">
-            <img
-                src="portfolio/11.png"
-                alt="Portfolio Page 11"
-                loading="lazy"
-            >
+            <img src="portfolio/11.png" alt="Portfolio Page 11">
         </section>
 
-        <!-- PAGE 12 -->
         <section class="portfolio-page">
-            <img
-                src="portfolio/12.png"
-                alt="Portfolio Page 12"
-                loading="lazy"
-            >
+            <img src="portfolio/12.png" alt="Portfolio Page 12">
         </section>
 
-        <!-- PAGE 13 -->
         <section class="portfolio-page">
-            <img
-                src="portfolio/13.png"
-                alt="Portfolio Page 13"
-                loading="lazy"
-            >
+            <img src="portfolio/13.png" alt="Portfolio Page 13">
         </section>
 
     </main>
-
-
-    <!-- =========================
-         FOOTER
-    ========================= -->
-
-    <footer>
-        © 2026 My Portfolio
-    </footer>
 
 </body>
 </html>
